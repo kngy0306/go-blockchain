@@ -24,3 +24,18 @@ Blockに含むもの
   - 取引時の情報
   - 実際はPoolと呼ばれる領域にtransactionを記録し、マイニングが終わればtransactionsに書き込む
 
+BlockChainに含むもの
+
+- transaction pool
+  - Transaction構造体をポインタでもつ
+- chain
+  - Block構造体をポインタでもつ
+
+nonceについて
+新しいブロックが正しいものと判断するため、コンセンサスアルゴリズムを用いて解を求める。解を計算して、nonceが正しいと判断する。
+
+- challenge値
+- prev hash
+- transaction
+
+を用いる。challenge値がnonceの候補値になる。ハッシュ値の先頭が0の3桁となれば、そのchallenge値がnonceとなる。0の桁数は難易度設定により変動する。本講座は0を3桁を解答とする。
